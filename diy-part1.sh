@@ -66,6 +66,14 @@ wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/downlo
 wget -qO- https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat > package/app/luci-app-openclash/root/etc/openclash/GeoSite.dat
 chmod +x package/app/luci-app-openclash/root/etc/openclash/core/clash*
 
+# kiddin9
+shopt -s extglob
+SHELL_FOLDER=$(dirname $(readlink -f "$0"))
+git_clone_path main https://github.com/lxiaya/openwrt-onecloud target/linux/amlogic
+sed -i "s/wpad-openssl/wpad-basic-mbedtls/" target/linux/amlogic/image/Makefile
+sed -i "s/neon-vfpv4/vfpv4/" target/linux/amlogic/meson8b/target.mk
+rm -rf package/feeds/routing/batman-adv
+
 ./scripts/feeds update -a
 \rm -rf feeds/packages/net/cdnspeedtest
 \rm -rf feeds/ssrplus/mosdns
