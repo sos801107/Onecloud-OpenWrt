@@ -80,7 +80,7 @@ wget -qO- $GEO_MMDB_URL > files/etc/openclash/Country.mmdb
 # kiddin9
 shopt -s extglob
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
-git_clone_path main https://github.com/lxiaya/openwrt-onecloud target/linux/amlogic
+merge_package main https://github.com/lxiaya/openwrt-onecloud target/linux target/linux/amlogic
 sed -i "s/wpad-openssl/wpad-basic-mbedtls/" target/linux/amlogic/image/Makefile
 sed -i "s/neon-vfpv4/vfpv4/" target/linux/amlogic/meson8b/target.mk
 rm -rf package/feeds/routing/batman-adv
