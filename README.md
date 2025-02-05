@@ -1,5 +1,7 @@
 # Onecloud-OpenWrt
 
+https://github.com/lxiaya/openwrt-onecloud
+
 https://github.com/pweot/openwrt-onecloud
 
 https://github.com/xydche/onecloud-openwrt
