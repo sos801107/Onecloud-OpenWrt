@@ -24,8 +24,8 @@ sed -i 's/OpenWrt/OneCloud/g' package/base-files/files/bin/config_generate
 sed -i "s/luci-static\/bootstrap/luci-static\/argon/g" feeds/luci/modules/luci-base/root/etc/config/luci
 
 # 7.修正连接数
-sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
-
+# sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
+echo 'net.netfilter.nf_conntrack_max=65536' >>package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 # 替换终端为bash
 # sed -i 's/\/bin\/ash/\/bin\/bash/' package/base-files/files/etc/passwd
