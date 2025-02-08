@@ -34,7 +34,7 @@ sed -i '/customized in this file/a net.netfilter.nf_conntrack_max=65535' package
 # sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 # 禁用wifi
-sed -i 's/disabled='${defaults ? 0 : 1}'/disabled='1'/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+sed -i 's/${defaults ? 0 : 1}/1/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 # 修改wifi名字
-sed -i 's/ssid='OpenWrt'/ssid='OneCloud'/' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+sed -i 's/OpenWrt/OneCloud/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
