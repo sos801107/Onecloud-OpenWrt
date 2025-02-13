@@ -4,6 +4,8 @@
 
 https://dl.openwrt.ai/packages-24.10/arm_cortex-a5_vfpv4/kiddin9/
 
+# 其他大佬：
+
 https://github.com/lxiaya/openwrt-onecloud
 
 https://github.com/mygit20230606/openwrt-onecloud
