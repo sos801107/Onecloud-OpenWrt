@@ -1,5 +1,12 @@
 # Onecloud-OpenWrt
 
+OpenWrt官方一键扩容,已经集成在root目录下
+
+wget -U "" -O expand-root.sh "https://openwrt.org/_export/code/docs/guide-user/advanced/expand_root?codeblock=0"
+chmod +x expand-root.sh
+./expand-root.sh
+
+
 系统→软件包→配置opkg，添加源，
 
 http://mirrors.ustc.edu.cn/openwrt/
