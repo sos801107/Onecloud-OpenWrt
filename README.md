@@ -3,7 +3,9 @@
 OpenWrt官方一键扩容,已经集成在root目录下
 
 wget -U "" -O expand-root.sh "https://openwrt.org/_export/code/docs/guide-user/advanced/expand_root?codeblock=0"
+
 chmod +x expand-root.sh
+
 ./expand-root.sh
 
 
