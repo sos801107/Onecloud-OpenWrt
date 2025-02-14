@@ -303,6 +303,7 @@ jobs:
           This is OpenWrt firmware for OneCloud
           ### 📒 Firmware information
           - 🚀 amlogic_meson8b 多功能版，集成插件多
+          - 💋一键扩容 cd /root ./expand-root.sh
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
