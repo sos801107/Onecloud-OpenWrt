@@ -40,6 +40,12 @@ merge_package main https://github.com/kenzok8/small-package package/app luci-app
 merge_package v5 https://github.com/sbwml/luci-app-mosdns package/app luci-app-mosdns mosdns v2dat
 merge_package main https://github.com/kenzok8/small-package package/app luci-app-fileassistant
 
+merge_package master https://github.com/immortalwrt/luci package/app applications/luci-app-msd_lite
+merge_package master https://github.com/immortalwrt/packages package/app net/msd_lite
+
+merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app luci-app-nikki
+merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app nikki
+
 echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >>feeds.conf.default
 git clone -b js --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/app/luci-app-unblockneteasemusic
 git clone -b master https://github.com/sbwml/luci-app-qbittorrent package/app/qbittorrent
