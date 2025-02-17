@@ -94,6 +94,8 @@ AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/release
 wget -qO- $AGH_CORE | tar xOvz > files/usr/bin/AdGuardHome
 chmod +x files/usr/bin/AdGuardHome
 
+mkdir -p files/etc/uci-defaults
+mkdir -p files/root
 chmod +x files/root/expand-root.sh
 chmod +x files/root/resize.sh
 
