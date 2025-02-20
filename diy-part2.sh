@@ -25,6 +25,9 @@ sed -i "s/luci-static\/bootstrap/luci-static\/argon/g" feeds/luci/modules/luci-b
 sed -i '/will not survive a reimage/a fs.file-max=102400\nnet.ipv4.neigh.default.gc_thresh1=512\nnet.ipv4.neigh.default.gc_thresh2=2048\nnet.ipv4.neigh.default.gc_thresh3=4096\nnet.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 echo 'net.netfilter.nf_conntrack_max=65536' >>package/kernel/linux/files/sysctl-nf-conntrack.conf
 
+# 添加无线网卡支持
+sed -i '/bool "Enable SDIO bus interface support"/a\		default y if TARGET_amlogic' package/kernel/mac80211/broadcom.mk
+
 # 替换终端为bash
 # sed -i 's/\/bin\/ash/\/bin\/bash/' package/base-files/files/etc/passwd
 
