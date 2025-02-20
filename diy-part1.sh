@@ -46,7 +46,9 @@ merge_package openwrt-24.10 https://github.com/immortalwrt/packages package/app 
 merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app luci-app-nikki
 merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app nikki
 
-echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >>feeds.conf.default
+# echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >>feeds.conf.default
+merge_package main https://github.com/gdy666/luci-app-lucky package/app lucky
+
 git clone -b js --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/app/luci-app-unblockneteasemusic
 git clone -b master https://github.com/sbwml/luci-app-qbittorrent package/app/qbittorrent
 
@@ -87,6 +89,7 @@ rm -rf package/feeds/routing/batman-adv
 
 merge_package openwrt-23.05 https://github.com/coolsnowwolf/luci feeds/luci/applications applications/luci-app-pppwn
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
+merge_package main https://github.com/gdy666/luci-app-lucky feeds/luci/applications luci-app-lucky
 
 ./scripts/feeds install -a
 
