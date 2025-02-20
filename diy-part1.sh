@@ -88,18 +88,6 @@ merge_package master https://github.com/coolsnowwolf/packages feeds/packages/mul
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
 merge_package openwrt-24.10 https://github.com/immortalwrt/packages feeds/packages/net net/msd_lite
 
-# AdguardHome core
-mkdir -p files/usr/bin
-AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_armv7 | awk -F '"' '{print $4}')
-wget -qO- $AGH_CORE | tar xOvz > files/usr/bin/AdGuardHome
-chmod +x files/usr/bin/AdGuardHome
-
-mkdir -p files/etc/uci-defaults
-mkdir -p files/root
-chmod +x files/root/expand-root.sh
-chmod +x files/root/resize.sh
-
-
 ./scripts/feeds install -a
 
 
