@@ -83,9 +83,11 @@ rm -rf package/feeds/routing/batman-adv
 ./scripts/feeds update -a
 
 merge_package openwrt-23.05 https://github.com/coolsnowwolf/luci feeds/luci/applications applications/luci-app-pppwn
+
 merge_package master https://github.com/coolsnowwolf/packages feeds/packages/multimedia multimedia/pppwn-cpp
 
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
+
 merge_package openwrt-24.10 https://github.com/immortalwrt/packages feeds/packages/net net/msd_lite
 
 ./scripts/feeds install -a
