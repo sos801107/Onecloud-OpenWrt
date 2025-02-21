@@ -36,31 +36,25 @@ function merge_package() {
     cd "$rootdir"
 }
 
+# 依赖
+merge_package master https://github.com/coolsnowwolf/packages package/app multimedia/pppwn-cpp
+merge_package openwrt-24.10 https://github.com/immortalwrt/packages package/app net/msd_lite
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/app/passwall_packages
+merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app nikki
+# merge_package main https://github.com/gdy666/luci-app-lucky package/app lucky
+merge_package main https://github.com/sirpdboy/luci-app-lucky package/app lucky
+
+# 软件包
 merge_package main https://github.com/kenzok8/small-package package/app luci-app-adguardhome
 merge_package v5 https://github.com/sbwml/luci-app-mosdns package/app luci-app-mosdns mosdns v2dat
 merge_package main https://github.com/kenzok8/small-package package/app luci-app-fileassistant
-
-merge_package master https://github.com/coolsnowwolf/packages package/app multimedia/pppwn-cpp
-merge_package openwrt-24.10 https://github.com/immortalwrt/packages package/app net/msd_lite
-
-merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app luci-app-nikki
-merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app nikki
-
-# echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >>feeds.conf.default
-merge_package main https://github.com/gdy666/luci-app-lucky package/app lucky
-
 git clone -b js --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/app/luci-app-unblockneteasemusic
 git clone -b master https://github.com/sbwml/luci-app-qbittorrent package/app/qbittorrent
 
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
-echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
-echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
-
-# 开发版openclash
+merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app luci-app-nikki
 merge_package dev https://github.com/vernesong/OpenClash package/app luci-app-openclash
 
-
-# kiddin9
+# 内核，参照 kiddin9
 shopt -s extglob
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 merge_package main https://github.com/lxiaya/openwrt-onecloud target/linux target/linux/amlogic
@@ -75,11 +69,10 @@ sed -i '/bool "Enable SDIO bus interface support"/a\		default y if TARGET_amlogi
 
 merge_package openwrt-23.05 https://github.com/coolsnowwolf/luci feeds/luci/applications applications/luci-app-pppwn
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
-merge_package main https://github.com/gdy666/luci-app-lucky feeds/luci/applications luci-app-lucky
-
-./scripts/feeds install -a
-
-# 主题
+merge_package main https://github.com/xiaorouji/openwrt-passwall2 feeds/luci/applications luci-app-passwall2
+merge_package main https://github.com/xiaorouji/openwrt-passwall feeds/luci/applications luci-app-passwall
+# merge_package main https://github.com/gdy666/luci-app-lucky feeds/luci/applications luci-app-lucky
+merge_package main https://github.com/sirpdboy/luci-app-lucky feeds/luci/applications luci-app-lucky
 
 # echo '### Argon Theme Config ###'
 rm -rf feeds/luci/themes/luci-theme-argon
@@ -87,5 +80,4 @@ git clone -b master  https://github.com/jerrykuku/luci-theme-argon.git feeds/luc
 rm -rf feeds/luci/applications/luci-app-argon-config # if have
 git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
 
-./scripts/feeds update -a
 ./scripts/feeds install -a
