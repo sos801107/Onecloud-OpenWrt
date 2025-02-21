@@ -41,8 +41,8 @@ merge_package master https://github.com/coolsnowwolf/packages package/app multim
 merge_package openwrt-24.10 https://github.com/immortalwrt/packages package/app net/msd_lite
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/app/passwall_packages
 merge_package main https://github.com/nikkinikki-org/OpenWrt-nikki package/app nikki
-# merge_package main https://github.com/gdy666/luci-app-lucky package/app lucky
-merge_package main https://github.com/sirpdboy/luci-app-lucky package/app lucky
+merge_package main https://github.com/gdy666/luci-app-lucky package/app lucky
+# merge_package main https://github.com/sirpdboy/luci-app-lucky package/app lucky
 
 # 软件包
 merge_package main https://github.com/kenzok8/small-package package/app luci-app-adguardhome
@@ -71,8 +71,8 @@ merge_package openwrt-23.05 https://github.com/coolsnowwolf/luci feeds/luci/appl
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
 merge_package main https://github.com/xiaorouji/openwrt-passwall2 feeds/luci/applications luci-app-passwall2
 merge_package main https://github.com/xiaorouji/openwrt-passwall feeds/luci/applications luci-app-passwall
-# merge_package main https://github.com/gdy666/luci-app-lucky feeds/luci/applications luci-app-lucky
-merge_package main https://github.com/sirpdboy/luci-app-lucky feeds/luci/applications luci-app-lucky
+merge_package main https://github.com/gdy666/luci-app-lucky feeds/luci/applications luci-app-lucky
+# merge_package main https://github.com/sirpdboy/luci-app-lucky feeds/luci/applications luci-app-lucky
 
 # echo '### Argon Theme Config ###'
 rm -rf feeds/luci/themes/luci-theme-argon
