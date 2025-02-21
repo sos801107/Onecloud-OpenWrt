@@ -84,6 +84,9 @@ merge_package main https://github.com/lxiaya/openwrt-onecloud target/linux targe
 sed -i "s/wpad-openssl/wpad-basic-mbedtls/" target/linux/amlogic/image/Makefile
 sed -i "s/neon-vfpv4/vfpv4/" target/linux/amlogic/meson8b/target.mk
 rm -rf package/feeds/routing/batman-adv
+# 添加无线网卡支持,似乎不起作用？
+sed -i '/bool "Enable SDIO bus interface support"/a\		default y if TARGET_amlogic' package/kernel/mac80211/broadcom.mk
+
 
 ./scripts/feeds update -a
 
