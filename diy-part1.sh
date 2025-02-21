@@ -69,6 +69,11 @@ rm -rf package/autocore-arm/.git
 sed -i 's/ + '\'' \x27 + luciversion\.revision//g' package/autocore-arm/files/generic/10_system.js
 
 ./scripts/feeds update -a
+rm -rf feeds/packages/net/microsocks
+rm -rf feeds/packages/net/sing-box
+rm -rf feeds/packages/net/v2ray-core
+rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/packages/net/xray-core
 
 merge_package openwrt-23.05 https://github.com/coolsnowwolf/luci feeds/luci/applications applications/luci-app-pppwn
 merge_package openwrt-24.10 https://github.com/immortalwrt/luci feeds/luci/applications applications/luci-app-msd_lite
@@ -83,4 +88,5 @@ git clone -b master  https://github.com/jerrykuku/luci-theme-argon.git feeds/luc
 rm -rf feeds/luci/applications/luci-app-argon-config # if have
 git clone https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
 
+./scripts/feeds update -a
 ./scripts/feeds install -a
