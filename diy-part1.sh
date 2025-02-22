@@ -67,9 +67,9 @@ rm -rf package/feeds/routing/batman-adv
 # 添加无线网卡支持,似乎不起作用？
 sed -i '/bool "Enable SDIO bus interface support"/a\		default y if TARGET_amlogic' package/kernel/mac80211/broadcom.mk
 
-git clone https://github.com/sbwml/autocore-arm package/autocore-arm -b openwrt-24.10 --depth 1
-rm -rf package/autocore-arm/.git
-sed -i 's/ + '\'' \x27 + luciversion\.revision//g' package/autocore-arm/files/generic/10_system.js
+# git clone https://github.com/sbwml/autocore-arm package/autocore-arm -b openwrt-24.10 --depth 1
+# rm -rf package/autocore-arm/.git
+# sed -i 's/ + '\'' \x27 + luciversion\.revision//g' package/autocore-arm/files/generic/10_system.js
 merge_package openwrt-24.10 https://github.com/immortalwrt/immortalwrt package package/emortal/automount
 
 ./scripts/feeds update -a
