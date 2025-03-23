@@ -307,7 +307,7 @@ jobs:
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 Default IP: 192.168.2.3
+          - 🌐 Default IP: 192.168.1.110
           - 🔑 Default username: root
           - 🔑 Default password: password
         
